@@ -13,7 +13,7 @@ export default function App() {
   }
   const displayTodos = () => {
     setlists([...lists, todo]);
-    settodo("");4
+    settodo("");
   };
   const check = useRef();
   const inp = useRef();
@@ -38,10 +38,22 @@ export default function App() {
   const displayfinished = (e) => {
    if(e.target.checked) 
    {finishedItems.current.className='';
-   console.log(check);
+  //  console.log(check);
   }
    else finishedItems.current.className='hidden';
   };
+  const handleDelete=(e)=>{
+    // console.log(e.target.value);
+   let newlist= lists.filter(item=>{
+      return item!=e.target.value; 
+    } 
+    )
+    let newcomplete=isComplete.filter(item=>{
+      return item!=e.target.value;
+    })
+    setlists(newlist);
+    setisComplete(newcomplete);
+  }
   // console.log(typeof lists)
   return (
     <>
@@ -84,6 +96,7 @@ export default function App() {
                   <li ref={check} >
                     <input ref={inp}  value={item} type="checkbox" onClick={handlefinished} className="m-3" />
                     {item}
+                    <button value={item} className="bg-blue-400 m-3  border-black border-solid active:border-2 rounded" onClick={handleDelete}>Delete</button>
                   </li>
                   </>
                 );
