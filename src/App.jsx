@@ -54,6 +54,10 @@ export default function App() {
     setlists(newlist);
     setisComplete(newcomplete);
   }
+   const handleEdit=(e)=>{
+    settodo(e.target.value);
+    handleDelete(e);
+  }
   // console.log(typeof lists)
   return (
     <>
@@ -94,9 +98,10 @@ export default function App() {
                 return (
                   <>
                   <li ref={check} >
-                    <input ref={inp}  value={item} type="checkbox" onClick={handlefinished} className="m-3" />
+                    <input ref={inp} value={item} type="checkbox" onClick={handlefinished} className="m-3" />
                     {item}
                     <button value={item} className="bg-blue-400 m-3  border-black border-solid active:border-2 rounded" onClick={handleDelete}>Delete</button>
+                    <button value={item} className="bg-blue-400 m-3  border-black border-solid active:border-2 rounded" onClick={handleEdit}>Edit</button>
                   </li>
                   </>
                 );
