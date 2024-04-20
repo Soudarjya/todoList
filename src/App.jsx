@@ -62,7 +62,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="bg-purple-300  w-80 mx-auto min-h-80 flex justify-center items-center flex-wrap mt-10">
+      <div className="bg-purple-300  w-3/4 mx-auto min-h-80 flex justify-center items-center flex-wrap mt-10">
         <div className="text-center">
           <h1>
             <b>Manage your tasks</b>
@@ -82,14 +82,14 @@ export default function App() {
           />
 
           <button
-            className="bg-blue-400  mt-4 w-72  border-black border-solid active:border-2"
+            className="bg-blue-400  mt-4 w-72  border-black border-solid active:border-2 rounded-xl"
             onClick={displayTodos}
           >
             save
           </button>
         </div>
         <div>
-          <div className="m-4 bg-slate-100 ">
+          <div className="m-4 bg-slate-100 rounded-3xl ">
             <h2 className="text-center">
               <b>Todos</b>
             </h2>
@@ -97,11 +97,11 @@ export default function App() {
               {lists.map((item) => {
                 return (
                   <>
-                  <li ref={check} >
+                  <li ref={check} className="flex items-center">
                     <input ref={inp} value={item} type="checkbox" onClick={handlefinished} className="m-3" />
                     {item}
-                    <button value={item} className="bg-blue-400 m-3  border-black border-solid active:border-2 rounded" onClick={handleDelete}>Delete</button>
-                    <button value={item} className="bg-blue-400 m-3  border-black border-solid active:border-2 rounded" onClick={handleEdit}>Edit</button>
+                    <button value={item} className="bg-blue-400 m-3  border-black border-solid active:border-2 rounded-lg text-center w-14" onClick={handleDelete}>Delete</button>
+                    <button value={item} className="bg-blue-400 m-3  border-black border-solid active:border-2 rounded-lg text-center w-10" onClick={handleEdit}>Edit</button>
                   </li>
                   </>
                 );
