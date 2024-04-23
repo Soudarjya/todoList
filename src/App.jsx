@@ -48,6 +48,9 @@ export default function App() {
       return item!=e.target.value; 
     } 
     )
+
+
+    
     let newcomplete=isComplete.filter(item=>{
       return item!=e.target.value;
     })
@@ -62,9 +65,9 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="bg-purple-300  w-3/4 mx-auto min-h-80 flex justify-center items-center flex-wrap mt-10">
-        <div className="text-center">
-          <h1>
+      <div className="bg-purple-300 w-96 mx-auto min-h-80 flex justify-center items-center flex-wrap mt-10">
+        <div className=" text-center">
+          <h1 >
             <b>Manage your tasks</b>
           </h1>
           <p className="mt-4">
